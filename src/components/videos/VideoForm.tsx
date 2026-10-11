@@ -107,7 +107,7 @@ export function VideoForm({ initial }: { initial: VideoPost | null }) {
     if (!f.type.startsWith('video/')) { toast('只能上传视频文件（mp4、webm、mov）'); return; }
     if (isServerMode() && f.size > UPLOAD_MAX) {
      toast(`服务器上传上限为 20MB（当前文件 ${fmtSize(f.size)}），较大的视频请使用链接`); 
-      return;);
+      return;
     }
     if (vidUrl) URL.revokeObjectURL(vidUrl);
     setVidFile(f); setVidUrl(URL.createObjectURL(f));
